@@ -1,0 +1,9 @@
+*.pyc
+ve
+.coverage
+coverage.xml
+flake8_report.txt
+coverage_report
+*.db
+.idea
+.cache
