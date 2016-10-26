@@ -23,19 +23,19 @@ led_worker_process = Process(target=run_led_server_worker)
 led_worker_process.start()
 
 
-# Start Django server
-def run_django_server():
-    import os
-    import sys
+# Start Flask server
+def run_flask_server():
 
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proj.settings.dev')
+    from led_server.app import app
 
-    from django.core.management import execute_from_command_line
-    execute_from_command_line(['manage.py', 'runserver', '0.0.0.0:10201', '--noreload'])
+    app.run(
+        host='0.0.0.0',
+        port=10200,
+    )
 
 
-django_worker = Process(target=run_django_server)
-django_worker.start()
+flask_worker = Process(target=run_flask_server)
+flask_worker.start()
 
 
 while True:
