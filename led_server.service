@@ -1,0 +1,5 @@
+[Unit]
+Description=Start developer server
+
+[Service]
+ExecStart=/home/pi/shared/led_server/manage.py runserver --settings=proj.settings.dev 0.0.0.0:10201

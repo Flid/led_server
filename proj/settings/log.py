@@ -6,7 +6,7 @@ import sys
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
 
     'root': {
         'level': 'DEBUG',
